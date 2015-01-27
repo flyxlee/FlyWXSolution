@@ -1,0 +1,4 @@
+G:\MySolution\WXProject\WXSolution\WXService\bin\Debug\WXService.dll
+G:\MySolution\WXProject\WXSolution\WXService\bin\Debug\WXService.pdb
+G:\MySolution\WXProject\WXSolution\WXService\obj\Debug\WXService.dll
+G:\MySolution\WXProject\WXSolution\WXService\obj\Debug\WXService.pdb

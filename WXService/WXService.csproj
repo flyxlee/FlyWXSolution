@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{591C154E-4195-44FD-833C-64499DF78F2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WXService</RootNamespace>
+    <AssemblyName>WXService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CommonEnum.cs" />
+    <Compile Include="Common\CheckSignature.cs" />
+    <Compile Include="Entity\Menu\MenuInfo.cs" />
+    <Compile Include="Entity\Menu\MenuJson.cs" />
+    <Compile Include="Entity\Reponse\Article.cs" />
+    <Compile Include="Entity\Reponse\ReponseMsgBase.cs" />
+    <Compile Include="Entity\Reponse\ReponseMsgNews.cs" />
+    <Compile Include="Entity\Reponse\ReponseMsgText.cs" />
+    <Compile Include="Entity\Request\Event\ReqEventBase.cs" />
+    <Compile Include="Entity\Request\Event\ReqEventClick.cs" />
+    <Compile Include="Entity\Request\Event\ReqEventSubscribe.cs" />
+    <Compile Include="Entity\Request\ReqMsgBase.cs" />
+    <Compile Include="Entity\Request\ReqMsgText.cs" />
+    <Compile Include="Entity\ReturnCode\AccessTokenInfo.cs" />
+    <Compile Include="Entity\ReturnCode\ErrJson.cs" />
+    <Compile Include="Factory\ReqMsgFactory.cs" />
+    <Compile Include="Handlers\AccessTokenHandler.cs" />
+    <Compile Include="Handlers\ClickEventHandler.cs" />
+    <Compile Include="Handlers\HandlerFactory.cs" />
+    <Compile Include="Handlers\IAccessToken.cs" />
+    <Compile Include="Handlers\IHandler.cs" />
+    <Compile Include="Handlers\IMenuApi.cs" />
+    <Compile Include="Handlers\MenuApi.cs" />
+    <Compile Include="Handlers\SubscribeEventHandler.cs" />
+    <Compile Include="Handlers\TextHandler.cs" />
+    <Compile Include="Helper\DateTimeHelper.cs" />
+    <Compile Include="Helper\EntityXmlHelper.cs" />
+    <Compile Include="Helper\GetWeiXinResultHelper.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
+    <Compile Include="Helper\MemoryCacheHelper.cs" />
+    <Compile Include="HttpUtility\RequestUtility.cs" />
+    <Compile Include="Message\DealWithMenu.cs" />
+    <Compile Include="Message\PlanningCertificateMsg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeiXinService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

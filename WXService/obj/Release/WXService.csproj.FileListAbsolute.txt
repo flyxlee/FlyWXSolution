@@ -1,0 +1,6 @@
+G:\MySolution\WXProject\WXSolution\WXService\bin\Release\WXService.dll
+G:\MySolution\WXProject\WXSolution\WXService\bin\Release\WXService.pdb
+G:\MySolution\WXProject\WXSolution\WXService\obj\Release\WXService.dll
+G:\MySolution\WXProject\WXSolution\WXService\obj\Release\WXService.pdb
+G:\MySolution\WXProject\WXSolution\WXService\bin\Release\Newtonsoft.Json.dll
+G:\MySolution\WXProject\WXSolution\WXService\obj\Release\WXService.csprojResolveAssemblyReference.cache
