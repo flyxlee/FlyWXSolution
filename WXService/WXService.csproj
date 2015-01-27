@@ -50,6 +50,7 @@
     <Compile Include="Entity\Menu\MenuJson.cs" />
     <Compile Include="Entity\Reponse\Article.cs" />
     <Compile Include="Entity\Reponse\ReponseMsgBase.cs" />
+    <Compile Include="Entity\Reponse\ReponseMsgCustomerService.cs" />
     <Compile Include="Entity\Reponse\ReponseMsgNews.cs" />
     <Compile Include="Entity\Reponse\ReponseMsgText.cs" />
     <Compile Include="Entity\Request\Event\ReqEventBase.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Helper\GetWeiXinResultHelper.cs" />
     <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Helper\MemoryCacheHelper.cs" />
+    <Compile Include="Helper\sqlHelper.cs" />
+    <Compile Include="Helper\SqlHelperParameterCache.cs" />
     <Compile Include="HttpUtility\RequestUtility.cs" />
     <Compile Include="Message\DealWithMenu.cs" />
     <Compile Include="Message\PlanningCertificateMsg.cs" />

@@ -30,139 +30,147 @@ namespace WXService.Handlers
         public string HandleRequest()
         {
             string response = string.Empty;
-            ReponseMsgText mt = new ReponseMsgText();
             string content = reqMsg.Content.Trim();
             if (string.IsNullOrEmpty(content))
             {
-                PlanningCertificateMsg pcMsg = new PlanningCertificateMsg();
-                response =  pcMsg.GetDefaultMsg();
+                PlanningCertificateMsg pcMsg = new PlanningCertificateMsg();                
+                ReponseMsgText mt = new ReponseMsgText();
+                mt.ToUserName = reqMsg.FromUserName;
+                mt.FromUserName = reqMsg.ToUserName;
+                mt.Content = pcMsg.GetDefaultMsg();
+                response = mt.ToXml();
+            }
+            else if (content.ToUpper().Equals("LY"))
+            {
+                ReponseMsgCustomerService mcs = new ReponseMsgCustomerService(reqMsg);
+                response = mcs.ToXml();
             }
             else
             {
                 response = HandleOther(content);
-            }
-            mt.Content = response;
-            //进行发送者、接收者转换
-            mt.ToUserName = reqMsg.FromUserName;
-            mt.FromUserName = reqMsg.ToUserName;
-            //mt.MsgType = CommonEnum.TEXT;
-            response = mt.ToXml();
+            }         
             return response;
         }
         /// <summary>
-        /// 处理其他消息
+        /// 处理消息
         /// </summary>
         /// <param name="mt"></param>
         /// <returns></returns>
         private string HandleOther(string requestContent)
         {
-            string response = string.Empty;
+            string responseContent = string.Empty;
+            ReponseMsgText mt = new ReponseMsgText();
+            
+            //进行发送者、接收者转换
+            mt.ToUserName = reqMsg.FromUserName;
+            mt.FromUserName = reqMsg.ToUserName;
             PlanningCertificateMsg pcMsg = new PlanningCertificateMsg();
             if (requestContent.EndsWith("11"))
             {
-                response =  pcMsg.GetOneBabyMsg();
+                responseContent =  pcMsg.GetOneBabyMsg();
             }
             else if (requestContent.EndsWith("12"))
             {
-                response =  pcMsg.GetReBirthMsg();
+                responseContent =  pcMsg.GetReBirthMsg();
             }
             else if (requestContent.EndsWith("13"))
             {
-                response =  pcMsg.GetPlanBirthMsg();
+                responseContent =  pcMsg.GetPlanBirthMsg();
             }
             else if (requestContent.EndsWith("21"))
             {
-                response =  pcMsg.GetFlowWebBirthMsg();
+                responseContent =  pcMsg.GetFlowWebBirthMsg();
             }
             else if (requestContent.EndsWith("22"))
             {
-                response =  pcMsg.GetMarriedWebBirthMsg();
+                responseContent =  pcMsg.GetMarriedWebBirthMsg();
             }
             else if (requestContent.EndsWith("23"))
             {
-                response =  pcMsg.GetFloatingPopulationWebBirthMsg();
+                responseContent =  pcMsg.GetFloatingPopulationWebBirthMsg();
             }
             else if (requestContent.EndsWith("31"))
             {
-                response =  pcMsg.GetEveryPlanProveMsg();
+                responseContent =  pcMsg.GetEveryPlanProveMsg();
             }
             else if (requestContent.EndsWith("32"))
             {
-                response = pcMsg.GetInProvinceFloatingPopulationPalnMsg();
+                responseContent = pcMsg.GetInProvinceFloatingPopulationPalnMsg();
             }
             else if (requestContent.EndsWith("33"))
             {
-                response = pcMsg.GetFloatingPopulationPalnMsg();
+                responseContent = pcMsg.GetFloatingPopulationPalnMsg();
             }
             else if (requestContent.ToLower().EndsWith("34"))
             {
-                response = pcMsg.GetOneChildParentsMsg();
+                responseContent = pcMsg.GetOneChildParentsMsg();
             }
             else if (requestContent.ToLower().EndsWith("41"))
             {
-                response = pcMsg.GetCountryFamilyBonusMsg();
+                responseContent = pcMsg.GetCountryFamilyBonusMsg();
             }
             else if (requestContent.ToLower().EndsWith("42"))
             {
-                response = pcMsg.GetCountryPlanBonusMsg();
+                responseContent = pcMsg.GetCountryPlanBonusMsg();
             }
             else if (requestContent.ToLower().EndsWith("43"))
             {
-                response = pcMsg.GetCityParentPlanBonusMsg();
+                responseContent = pcMsg.GetCityParentPlanBonusMsg();
             }
             else if (requestContent.ToLower().EndsWith("44"))
             {
-                response = pcMsg.GetPlanFamilySpecialBonusMsg();
+                responseContent = pcMsg.GetPlanFamilySpecialBonusMsg();
             }
             else if (requestContent.ToLower().EndsWith("51"))
             {
-                response = pcMsg.getDefinitionOnlyChildMsg();
+                responseContent = pcMsg.getDefinitionOnlyChildMsg();
             }
             else if (requestContent.ToLower().EndsWith("52"))
             {
-                response = pcMsg.getOnlyTowChildJoinMsg();
+                responseContent = pcMsg.getOnlyTowChildJoinMsg();
             }
             else if (requestContent.ToLower().EndsWith("53"))
             {
-                response = pcMsg.getMarriedAgainBirthMsg();
+                responseContent = pcMsg.getMarriedAgainBirthMsg();
             }
             else if (requestContent.ToLower().EndsWith("54"))
             {
-                response = pcMsg.getMarriedAgainBirthApprovalMsg();
+                responseContent = pcMsg.getMarriedAgainBirthApprovalMsg();
             }
             else if (requestContent.ToLower().EndsWith("61"))
             {
-                response = pcMsg.getRuralCooperativeApplicationMsg();
+                responseContent = pcMsg.getRuralCooperativeApplicationMsg();
             }
             else if (requestContent.ToLower().EndsWith("62"))
             {
-                response = pcMsg.getRuralCooperativeAppliedDataMsg();
+                responseContent = pcMsg.getRuralCooperativeAppliedDataMsg();
             }
             else if (requestContent.ToLower().EndsWith("63"))
             {
-                response = pcMsg.GetDefaultMsg();
+                responseContent = pcMsg.getRuralCooperativeGoThroughMsg();
             }
             else if (requestContent.ToLower().EndsWith("71"))
             {
-                response = pcMsg.getRuralFamilyPlanningRewardMsg();
+                responseContent = pcMsg.getRuralFamilyPlanningRewardMsg();
             }
             else if (requestContent.ToLower().EndsWith("72"))
             {
-                response = pcMsg.getRuralPlanningBirthControlRewardMsg();
+                responseContent = pcMsg.getRuralPlanningBirthControlRewardMsg();
             }
             else if (requestContent.ToLower().EndsWith("73"))
             {
-                response = pcMsg.getTownFamilyPlanningRewardMsg();
+                responseContent = pcMsg.getTownFamilyPlanningRewardMsg();
             }
             else if (requestContent.ToLower().EndsWith("74"))
             {
-                response = pcMsg.getFamilyPlanningSpecialAssistanceMsg();
+                responseContent = pcMsg.getFamilyPlanningSpecialAssistanceMsg();
             }
             else
             {
-                response =  pcMsg.GetDefaultMsg();
+                responseContent =  pcMsg.GetDefaultMsg();
             }
-
+            mt.Content = responseContent;
+            string response = mt.ToXml();
             return response;
         }
 

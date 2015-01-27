@@ -104,7 +104,7 @@ namespace WXService.Message
             sb.Append("发送数字查询相关办事程序：").Append("\n");
             sb.Append("61.申请对象条件").Append("\n");
             sb.Append("62.申请资料").Append("\n");
-            sb.Append("63. 办理程序");
+            sb.Append("63.办理程序");
             return sb.ToString();
         }
 
@@ -349,6 +349,16 @@ namespace WXService.Message
             sb.Append("复印全家户口本（含首页）、准生证复印件、独生户的复印独生子女证、纯二女户的复印结扎证、离婚的对象复印离婚协议书");
             return sb.ToString();
         }
+
+        public string getRuralCooperativeGoThroughMsg()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("农村合作医疗办理程序：").Append("\n");
+            sb.Append("请带齐上述资料到户籍所在地的村委会办理");
+            return sb.ToString();
+        }
+
+
 
         public string getRuralFamilyPlanningRewardMsg()
         {

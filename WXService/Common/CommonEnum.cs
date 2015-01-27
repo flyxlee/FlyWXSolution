@@ -68,6 +68,8 @@ namespace WXService.Common
         public const string NEWS = "news";
 
         public const string EVENT = "event";
+
+        public const string Transfer_Customer_Service = "transfer_customer_service";
     }
 
     public class ButtonType

@@ -32,13 +32,35 @@ namespace WXService.Handlers
         {
             string response = string.Empty;
             string eventKey = reqEvent.EventKey;
-            string eventValue = GetEventValue(eventKey);
+            if (eventKey.Equals("law"))
+            {
+                ReponseMsgNews mn = new ReponseMsgNews();
+                mn.ToUserName = reqEvent.FromUserName;
+                mn.FromUserName = reqEvent.ToUserName;
+                mn.ArticleCount = 3;
+                Article CountryPlanningLaw = new Article();
+                CountryPlanningLaw.Title = "中华人民共和国人口与计划生育法";
+                CountryPlanningLaw.Url = "http://www.gdwst.gov.cn/a/falvfagui/201002037485.html";
+                mn.Articles.Add(CountryPlanningLaw);
+                Article CantonPlanningLaw = new Article();
+                CantonPlanningLaw.Title = "广东省人口与计划生育条例";
+                CantonPlanningLaw.Url = "http://210.76.65.92:9010/pub/rdweb/lfzw/dfxfgxxcx/gdrdcwh/201404/t20140404_141654.html";
+                mn.Articles.Add(CantonPlanningLaw);
+                Article FlowPlanningLaw = new Article();
+                FlowPlanningLaw.Title = "流动人口计划生育工作条例";
+                FlowPlanningLaw.Url = "http://www.gov.cn/zhengce/2009-05/20/content_2602541.htm";
+                mn.Articles.Add(FlowPlanningLaw);
+                response = mn.ToXml();
 
-            ReponseMsgText mt = new ReponseMsgText();
-            mt.ToUserName = reqEvent.FromUserName;
-            mt.FromUserName = reqEvent.ToUserName;
-            mt.Content = eventValue;
-            response = mt.ToXml();
+            }
+            else {
+                string eventValue = GetEventValue(eventKey);
+                ReponseMsgText mt = new ReponseMsgText();
+                mt.ToUserName = reqEvent.FromUserName;
+                mt.FromUserName = reqEvent.ToUserName;
+                mt.Content = eventValue;
+                response = mt.ToXml();
+            }
             return response;
         }
 
