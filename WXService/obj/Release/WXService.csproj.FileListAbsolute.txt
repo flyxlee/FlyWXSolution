@@ -9,3 +9,4 @@ G:\MySolution\WXProject\FlyWXSolution\WXService\bin\Release\WXService.pdb
 G:\MySolution\WXProject\FlyWXSolution\WXService\bin\Release\Newtonsoft.Json.dll
 G:\MySolution\WXProject\FlyWXSolution\WXService\obj\Release\WXService.dll
 G:\MySolution\WXProject\FlyWXSolution\WXService\obj\Release\WXService.pdb
+G:\MySolution\WXProject\FlyWXSolution\WXService\obj\Release\WXService.csprojResolveAssemblyReference.cache

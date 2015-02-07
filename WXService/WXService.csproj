@@ -77,8 +77,10 @@
     <Compile Include="Helper\MemoryCacheHelper.cs" />
     <Compile Include="Helper\sqlHelper.cs" />
     <Compile Include="Helper\SqlHelperParameterCache.cs" />
+    <Compile Include="Helper\TimeHelper.cs" />
     <Compile Include="HttpUtility\RequestUtility.cs" />
     <Compile Include="Message\DealWithMenu.cs" />
+    <Compile Include="Message\PlanningArticles.cs" />
     <Compile Include="Message\PlanningCertificateMsg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeiXinService.cs" />

@@ -13,10 +13,10 @@
       <publishTime>01/11/2015 19:51:04</publishTime>
     </File>
     <File Include="bin/WXService.dll">
-      <publishTime>01/27/2015 22:32:04</publishTime>
+      <publishTime>02/04/2015 22:05:09</publishTime>
     </File>
     <File Include="bin/WXSolution.dll">
-      <publishTime>01/27/2015 22:32:04</publishTime>
+      <publishTime>02/04/2015 22:05:10</publishTime>
     </File>
     <File Include="index.ashx">
       <publishTime>01/05/2015 20:08:27</publishTime>
@@ -25,7 +25,7 @@
       <publishTime>01/21/2015 20:29:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/27/2015 22:32:10</publishTime>
+      <publishTime>02/04/2015 22:05:19</publishTime>
     </File>
     <File Include="WebForm1.aspx">
       <publishTime>01/07/2015 19:49:23</publishTime>

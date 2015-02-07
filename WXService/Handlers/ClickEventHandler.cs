@@ -32,37 +32,95 @@ namespace WXService.Handlers
         {
             string response = string.Empty;
             string eventKey = reqEvent.EventKey;
-            if (eventKey.Equals("law"))
+            ReponseMsgText mt = new ReponseMsgText();
+            mt.ToUserName = reqEvent.FromUserName;
+            mt.FromUserName = reqEvent.ToUserName;
+            if (eventKey.Equals("otherPlanning"))
             {
-                ReponseMsgNews mn = new ReponseMsgNews();
-                mn.ToUserName = reqEvent.FromUserName;
-                mn.FromUserName = reqEvent.ToUserName;
-                mn.ArticleCount = 3;
-                Article CountryPlanningLaw = new Article();
-                CountryPlanningLaw.Title = "中华人民共和国人口与计划生育法";
-                CountryPlanningLaw.Url = "http://www.gdwst.gov.cn/a/falvfagui/201002037485.html";
-                mn.Articles.Add(CountryPlanningLaw);
-                Article CantonPlanningLaw = new Article();
-                CantonPlanningLaw.Title = "广东省人口与计划生育条例";
-                CantonPlanningLaw.Url = "http://210.76.65.92:9010/pub/rdweb/lfzw/dfxfgxxcx/gdrdcwh/201404/t20140404_141654.html";
-                mn.Articles.Add(CantonPlanningLaw);
-                Article FlowPlanningLaw = new Article();
-                FlowPlanningLaw.Title = "流动人口计划生育工作条例";
-                FlowPlanningLaw.Url = "http://www.gov.cn/zhengce/2009-05/20/content_2602541.htm";
-                mn.Articles.Add(FlowPlanningLaw);
-                response = mn.ToXml();
-
-            }
-            else {
-                string eventValue = GetEventValue(eventKey);
-                ReponseMsgText mt = new ReponseMsgText();
-                mt.ToUserName = reqEvent.FromUserName;
-                mt.FromUserName = reqEvent.ToUserName;
-                mt.Content = eventValue;
+                mt.Content = GetEventValue(eventKey);
                 response = mt.ToXml();
+            }
+            else if (eventKey.Equals("activity"))
+            {
+                mt.Content = GetEventValue(eventKey);
+                response = mt.ToXml();
+            }
+            else if (eventKey.Equals("phone"))
+            {
+                mt.Content = GetEventValue(eventKey);
+                response = mt.ToXml();
+            }
+            else if (eventKey.Equals("online"))
+            {
+                mt.Content = GetEventValue(eventKey);
+                response = mt.ToXml();
+            }
+            else if (eventKey.Equals("characteristic"))
+            {
+                mt.Content = GetEventValue(eventKey);
+                response = mt.ToXml();
+            }
+            else
+            {
+                response = GetNews(eventKey);
             }
             return response;
         }
+
+        private string GetNews(string eventKey)
+        {
+            string news = string.Empty;
+            PlanningArticles pa = new PlanningArticles();
+            ReponseMsgNews mn = new ReponseMsgNews();
+            mn.ToUserName = reqEvent.FromUserName;
+            mn.FromUserName = reqEvent.ToUserName;
+            switch (eventKey)
+            {
+                case "birth":
+                    mn.Articles = pa.GetBirthArticles();                   
+                    break;
+                case "marriage":
+                    mn.Articles = pa.GetMarriageArticles();
+                    break;
+                case "planning":
+                    mn.Articles = pa.GetPlanningArticles();
+                    break;
+                case "aids":
+                    mn.Articles = pa.GetAidsArticles();
+                    break;
+                //case "otherPlanning":
+                //    mn.Articles = 
+                //    break;
+                case "oneTwo":
+                    mn.Articles = pa.GetOneTwoArticles();
+                    break;
+                case "cooperative":
+                    mn.Articles = pa.GetCooperativeArticles();
+                    break;
+                case "reward":
+                    mn.Articles = pa.GetRewardArticles();
+                    break;
+                case "law":
+                    mn.Articles = pa.GetLawArticles();
+                    break;
+                //case "activity":
+                //    news = pcMsg.GetDefaultMsg();
+                //    break;
+                //case "phone":
+                //    news = pcMsg.getPhoneServiceMsg();
+                //    break;
+                //case "online":
+                //    news = pcMsg.GetDefaultMsg();
+                //    break;
+                //case "characteristic":
+                //    news = pcMsg.GetDefaultMsg();
+                //    break;
+
+            }
+            mn.ArticleCount = mn.Articles.Count;
+            return mn.ToXml();
+        }
+       
 
         private string GetEventValue(string eventKey)
         {
@@ -70,33 +128,33 @@ namespace WXService.Handlers
             PlanningCertificateMsg pcMsg = new PlanningCertificateMsg();
             switch (eventKey)
             {
-                case "birth":
-                    eventValue =  pcMsg.GetBirthList();
-                    break;
-                case "marriage":
-                    eventValue =  pcMsg.GetMarriageList();
-                    break;
-                case "planning":
-                    eventValue =  pcMsg.GetPlanningList();
-                    break;
-                case "aids":
-                    eventValue =  pcMsg.GetAidsList();
-                    break;
+                //case "birth":
+                //    eventValue =  pcMsg.GetBirthList();
+                //    break;
+                //case "marriage":
+                //    eventValue =  pcMsg.GetMarriageList();
+                //    break;
+                //case "planning":
+                //    eventValue =  pcMsg.GetPlanningList();
+                //    break;
+                //case "aids":
+                //    eventValue =  pcMsg.GetAidsList();
+                //    break;
                 case "otherPlanning":
                     eventValue =  pcMsg.getOtherPlanningMsg();
                     break;
-                case "oneTwo":
-                    eventValue =  pcMsg.getOneTwoList();
-                    break;
-                case "cooperative":
-                    eventValue =  pcMsg.getCooperativeList();
-                    break;
-                case "reward":
-                    eventValue =  pcMsg.getRewardList();
-                    break;
-                case "law":
-                    eventValue =  pcMsg.GetDefaultMsg();
-                    break;
+                //case "oneTwo":
+                //    eventValue =  pcMsg.getOneTwoList();
+                //    break;
+                //case "cooperative":
+                //    eventValue =  pcMsg.getCooperativeList();
+                //    break;
+                //case "reward":
+                //    eventValue =  pcMsg.getRewardList();
+                //    break;
+                //case "law":
+                //    eventValue =  pcMsg.GetDefaultMsg();
+                //    break;
                 case "activity":
                     eventValue =  pcMsg.GetDefaultMsg();
                     break;
