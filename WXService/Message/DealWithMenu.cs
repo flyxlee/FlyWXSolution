@@ -16,7 +16,7 @@ namespace WXService.Message
                 new MenuInfo("流动人口婚育证明",ButtonType.CLICK,"marriage"),
                 new MenuInfo("办理各类计生证明",ButtonType.CLICK,"planning"),
                 new MenuInfo("奖励/扶助",ButtonType.CLICK,"aids"),
-                new MenuInfo("其他计生服务",ButtonType.CLICK,"otherPlanning")
+                new MenuInfo("其他计生服务",ButtonType.VIEW,"http://flylxee.chinacloudsites.cn/static/OtherPlanning.html")
             });
 
             MenuInfo PolicyInfo = new MenuInfo("政策宣传", new MenuInfo[] { 

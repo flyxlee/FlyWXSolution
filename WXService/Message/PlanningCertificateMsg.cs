@@ -386,7 +386,7 @@ namespace WXService.Message
             sb.Append("（四）未办理结婚登记生育第一个子女，六十日内未补办结婚登记的对象").Append("\n");
             sb.Append("（五）未经审批再生育的对象").Append("\n");
             sb.Append("（六）未依法办理收养登记子女的对象").Append("\n");
-            sb.Append("（七）凡已享受过其他形式的农村计划生育节育奖励的对象。");
+            sb.Append("（七）凡已享受过其他形式的农村计划生育节育奖励的对象");
             return sb.ToString();
         }
 

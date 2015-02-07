@@ -35,12 +35,7 @@ namespace WXService.Handlers
             ReponseMsgText mt = new ReponseMsgText();
             mt.ToUserName = reqEvent.FromUserName;
             mt.FromUserName = reqEvent.ToUserName;
-            if (eventKey.Equals("otherPlanning"))
-            {
-                mt.Content = GetEventValue(eventKey);
-                response = mt.ToXml();
-            }
-            else if (eventKey.Equals("activity"))
+            if (eventKey.Equals("activity"))
             {
                 mt.Content = GetEventValue(eventKey);
                 response = mt.ToXml();
@@ -51,11 +46,6 @@ namespace WXService.Handlers
                 response = mt.ToXml();
             }
             else if (eventKey.Equals("online"))
-            {
-                mt.Content = GetEventValue(eventKey);
-                response = mt.ToXml();
-            }
-            else if (eventKey.Equals("characteristic"))
             {
                 mt.Content = GetEventValue(eventKey);
                 response = mt.ToXml();
@@ -112,12 +102,11 @@ namespace WXService.Handlers
                 //case "online":
                 //    news = pcMsg.GetDefaultMsg();
                 //    break;
-                //case "characteristic":
-                //    news = pcMsg.GetDefaultMsg();
-                //    break;
+                case "characteristic":
+                    mn.Articles = pa.GetCharacteristicArticles();
+                    break;
 
             }
-            mn.ArticleCount = mn.Articles.Count;
             return mn.ToXml();
         }
        
@@ -140,9 +129,9 @@ namespace WXService.Handlers
                 //case "aids":
                 //    eventValue =  pcMsg.GetAidsList();
                 //    break;
-                case "otherPlanning":
-                    eventValue =  pcMsg.getOtherPlanningMsg();
-                    break;
+                //case "otherPlanning":
+                //    eventValue =  pcMsg.getOtherPlanningMsg();
+                //    break;
                 //case "oneTwo":
                 //    eventValue =  pcMsg.getOneTwoList();
                 //    break;
@@ -164,9 +153,9 @@ namespace WXService.Handlers
                 case "online":
                     eventValue =  pcMsg.GetDefaultMsg();
                     break;
-                case "characteristic":
-                    eventValue =  pcMsg.GetDefaultMsg();
-                    break;
+                //case "characteristic":
+                //    eventValue =  pcMsg.GetDefaultMsg();
+                //    break;
 
             }
             return eventValue;

@@ -129,7 +129,7 @@ namespace WXService.Message
             List<Article> Articles = new List<Article>();
             Article articleOne = new Article();
             articleOne.Title = "“单独两孩”的实施时间及独生子女的界定";
-            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/51DefinitionOnlyChild";
+            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/51DefinitionOnlyChild.html";
             articleOne.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mDsgPkicRDMNiaG0u8aIRaYpLaVcSGEZicicLOEhXeOM3aicmdFZ5m7HDsgxg/0";
             Articles.Add(articleOne);
             Article articleTwo = new Article();
@@ -159,18 +159,18 @@ namespace WXService.Message
             List<Article> Articles = new List<Article>();
             Article articleOne = new Article();
             articleOne.Title = "农村合作医疗申请对象条件";
-            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/2FlowWebBirth.html";
+            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/61RuralCooperativeApplication.html";
             articleOne.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mD7YgZT5NrUVMD94mz6kadN1jUOuOQmOwicVh1LdW2PTVqhkyZZlrK9VA/0";
             Articles.Add(articleOne);
             Article articleTwo = new Article();
             articleTwo.Title = "农村合作医疗申请资料";
             articleTwo.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mDg3zdvb9WLYPAy1wXagJThcwXSXfspsdh9sUtABsD7ceKNNvXCGNqmg/0";
-            articleTwo.Url = "http://flylxee.chinacloudsites.cn/static/2MarriedWebBirth.html";
+            articleTwo.Url = "http://flylxee.chinacloudsites.cn/static/62RuralCooperativeAppliedData.html";
             Articles.Add(articleTwo);
             Article articleThree = new Article();
             articleThree.Title = "农村合作医疗办理程序";
             articleThree.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mDrFTBjkgQSdoFOWrP00vOONE7R4eoSbBt5eX48b0QichvR7xFDLEZ22g/0";
-            articleThree.Url = "http://flylxee.chinacloudsites.cn/static/2FloatingPopulationWebBirth.html";
+            articleThree.Url = "http://flylxee.chinacloudsites.cn/static/63RuralCooperativeGoThroughh.html";
             Articles.Add(articleThree);
             return Articles;
         }
@@ -184,23 +184,23 @@ namespace WXService.Message
             List<Article> Articles = new List<Article>();
             Article articleOne = new Article();
             articleOne.Title = "农村计划生育家庭奖励";
-            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/2FlowWebBirth.html";
+            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/71RuralFamilyPlanningReward.html";
             articleOne.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mDWkcdtjmgnlWunSZ7R4nuZ9vjhaIqy8rmhibqItohWt5PpRjckWb9siaQ/0";
             Articles.Add(articleOne);
             Article articleTwo = new Article();
             articleTwo.Title = "“农村计划生育节育奖励";
             articleTwo.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mD0x37M6DUicX5Gjrp0yg2Jtkibjq1KJTmHyicEHFNGCNcpFNgAm9PH9DKQ/0";
-            articleTwo.Url = "http://flylxee.chinacloudsites.cn/static/2MarriedWebBirth.html";
+            articleTwo.Url = "http://flylxee.chinacloudsites.cn/static/72RuralPlanningBirthControlReward.html";
             Articles.Add(articleTwo);
             Article articleThree = new Article();
             articleThree.Title = "独生子女计划生育奖励";
             articleThree.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mDDwhQUO6Q9pHDGtMBXyDA9lp21vjzFJnKKicMcFa45F2tOxuJILxtFmA/0";
-            articleThree.Url = "http://flylxee.chinacloudsites.cn/static/2FloatingPopulationWebBirth.html";
+            articleThree.Url = "http://flylxee.chinacloudsites.cn/static/73TownFamilyPlanningReward.html";
             Articles.Add(articleThree);
             Article articleFour = new Article();
             articleFour.Title = "计划生育家庭特别扶助金";
             articleFour.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PnIbiaS1iciapMHvdecoQj7mDuOiauLmLhXAhglkGoA2ZWzQeYZsye6WKejhMVwfvccTY8DBh2E50fdA/0";
-            articleFour.Url = "http://flylxee.chinacloudsites.cn/static/2FloatingPopulationWebBirth.html";
+            articleFour.Url = "http://flylxee.chinacloudsites.cn/static/74FamilyPlanningSpecialAssistance.html";
             Articles.Add(articleFour);
             return Articles;
         }
@@ -219,7 +219,7 @@ namespace WXService.Message
             Articles.Add(CountryPlanningLaw);
             Article CantonPlanningLaw = new Article();
             CantonPlanningLaw.Title = "广东省人口与计划生育条例";
-            CantonPlanningLaw.Url = "http://210.76.65.92:9010/pub/rdweb/lfzw/dfxfgxxcx/gdrdcwh/201404/t20140404_141654.html";
+            CantonPlanningLaw.Url = "http://flylxee.chinacloudsites.cn/static/CantonPlanningLaw.html";
             CantonPlanningLaw.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3PLCNr6mJx8tO9JehdrgpSA5AxfTwmKiad5IDq6Vv2vD1lMSUtYAvyQ4r4wnBhiaBFOib0mUc0u8z88Q/0";
             Articles.Add(CantonPlanningLaw);
             Article FlowPlanningLaw = new Article();
@@ -231,6 +231,21 @@ namespace WXService.Message
 
         }
 
-
+        /// <summary>
+        /// 特色工作
+        /// </summary>
+        /// <returns></returns>
+        public List<Article> GetCharacteristicArticles()
+        {
+            List<Article> Articles = new List<Article>();
+            Article articleOne = new Article();
+            articleOne.Title = "鹤山市沙坪街道东升社区省级群众自治示范居简介";
+            articleOne.Url = "http://flylxee.chinacloudsites.cn/static/AutonomousDemonstration.html";
+            articleOne.PicUrl = "https://mmbiz.qlogo.cn/mmbiz/WQN53PGdv3OXdo1zgzUQJZChahHMpcAxKBvvibv7KB53aGcnVEnykPBmeoWE05ibFtOZn1yI3mgV2yCrqkogp6WQ/0";
+            articleOne.Description = "东升社区人口计生工作一直走在街道的前列，连续多年政策生育率都达到95%以上。在沙坪街道办的支持下，东升社区共投入20多万元新建了人口文化园，建造了以“倡导文明生育观、促进家庭和谐幸福”为主题的一家三口雕塑，从特具人口文化底藴的人文雕塑到篮球场，从健身器材到悠闲小径，从独树一格的计生宣传牌到石椅，处处都渗透着健康文明幸福的生活理念……";
+            Articles.Add(articleOne);
+            return Articles;
+        }
+        
     }
 }
