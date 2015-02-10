@@ -16,7 +16,7 @@ namespace WXService.Message
                 new MenuInfo("流动人口婚育证明",ButtonType.CLICK,"marriage"),
                 new MenuInfo("办理各类计生证明",ButtonType.CLICK,"planning"),
                 new MenuInfo("奖励/扶助",ButtonType.CLICK,"aids"),
-                new MenuInfo("其他计生服务",ButtonType.VIEW,"http://flylxee.chinacloudsites.cn/static/OtherPlanning.html")
+                new MenuInfo("其他计生服务",ButtonType.VIEW,"http://spjs.chinacloudsites.cn/static/OtherPlanning.html")
             });
 
             MenuInfo PolicyInfo = new MenuInfo("政策宣传", new MenuInfo[] { 
@@ -30,7 +30,8 @@ namespace WXService.Message
                 new MenuInfo("通知通告",ButtonType.CLICK,"activity"),
                 new MenuInfo("电话咨询服务",ButtonType.CLICK,"phone"),
                 new MenuInfo("在线咨询服务",ButtonType.CLICK,"online"),
-                new MenuInfo("特色工作",ButtonType.CLICK,"characteristic")
+                new MenuInfo("特色工作",ButtonType.CLICK,"characteristic"),
+                new MenuInfo("保健卫生知识",ButtonType.CLICK,"health")
             });
 
             MenuJson MJ = new MenuJson();

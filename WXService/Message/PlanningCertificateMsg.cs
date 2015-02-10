@@ -417,5 +417,13 @@ namespace WXService.Message
             sb.Append("（五）因丧偶或离婚的单亲家庭，男方或女方需年满49周岁");
             return sb.ToString();
         }
+
+        public string getOnlineMsg()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("感谢您对鹤山市沙坪街道人口和计划生育服务中心的关注,我们的在线咨询时间为周一至周五早上9点-11点，下午2点-5点（法定节假日除外）");
+            return sb.ToString();
+        }
+
     }
 }

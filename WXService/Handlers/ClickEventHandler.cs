@@ -32,23 +32,29 @@ namespace WXService.Handlers
         {
             string response = string.Empty;
             string eventKey = reqEvent.EventKey;
-            ReponseMsgText mt = new ReponseMsgText();
-            mt.ToUserName = reqEvent.FromUserName;
-            mt.FromUserName = reqEvent.ToUserName;
+            
             if (eventKey.Equals("activity"))
             {
-                mt.Content = GetEventValue(eventKey);
-                response = mt.ToXml();
+                response = GetEventValue(eventKey);
             }
             else if (eventKey.Equals("phone"))
             {
-                mt.Content = GetEventValue(eventKey);
-                response = mt.ToXml();
+                response = GetEventValue(eventKey);
             }
             else if (eventKey.Equals("online"))
             {
-                mt.Content = GetEventValue(eventKey);
-                response = mt.ToXml();
+                List<string> weekendList = new List<string>();
+                weekendList.Add("Saturday");
+                weekendList.Add("Sunday");
+                if (TimeHelper.IsWorkingDay("01:00", "09:00", weekendList))
+                {
+                    ReponseMsgCustomerService mcs = new ReponseMsgCustomerService(reqEvent);
+                    response = mcs.ToXml();
+                }
+                else
+                {
+                    response = GetEventValue(eventKey);
+                }                
             }
             else
             {
@@ -105,6 +111,9 @@ namespace WXService.Handlers
                 case "characteristic":
                     mn.Articles = pa.GetCharacteristicArticles();
                     break;
+                case "health":
+                    mn.Articles = pa.GetHealthArticles();
+                    break;
 
             }
             return mn.ToXml();
@@ -114,6 +123,9 @@ namespace WXService.Handlers
         private string GetEventValue(string eventKey)
         {
             string eventValue = string.Empty;
+            ReponseMsgText mt = new ReponseMsgText();
+            mt.ToUserName = reqEvent.FromUserName;
+            mt.FromUserName = reqEvent.ToUserName;
             PlanningCertificateMsg pcMsg = new PlanningCertificateMsg();
             switch (eventKey)
             {
@@ -151,14 +163,18 @@ namespace WXService.Handlers
                     eventValue =  pcMsg.getPhoneServiceMsg();
                     break;
                 case "online":
-                    eventValue =  pcMsg.GetDefaultMsg();
+                    eventValue = pcMsg.getOnlineMsg();
                     break;
+                //case "health":
+                //    eventValue = pcMsg.GetDefaultMsg();
+                //    break;
                 //case "characteristic":
                 //    eventValue =  pcMsg.GetDefaultMsg();
                 //    break;
 
             }
-            return eventValue;
+            mt.Content = eventValue;
+            return mt.ToXml();
         }
     }
 }

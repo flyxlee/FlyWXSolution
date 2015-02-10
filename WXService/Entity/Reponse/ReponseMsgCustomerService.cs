@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using WXService.Common;
 using WXService.Entity.Request;
+using WXService.Entity.Request.Event;
 
 namespace WXService.Entity.Reponse
 {
@@ -19,8 +20,13 @@ namespace WXService.Entity.Reponse
         public ReponseMsgCustomerService(ReqMsgText req) : this()
         {
             this.ToUserName = req.FromUserName;
+            this.FromUserName = req.ToUserName;    
+        }
+
+        public ReponseMsgCustomerService(ReqEventClick req): this()
+        {
+            this.ToUserName = req.FromUserName;
             this.FromUserName = req.ToUserName;
-            
         }
     }
 }

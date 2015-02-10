@@ -8,6 +8,13 @@ namespace WXService.Helper
 {
     public class TimeHelper
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="workingDayAM">01:00</param>
+        /// <param name="workingDayPM">11:30</param>
+        /// <param name="weekend">Saturday,Sunday</param>
+        /// <returns></returns>
         public static bool IsWorkingDay(string workingDayAM, string workingDayPM, List<string> weekend)
         {
             TimeSpan am = DateTime.Parse(workingDayAM).TimeOfDay;
