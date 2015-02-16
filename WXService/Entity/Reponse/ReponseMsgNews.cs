@@ -20,7 +20,10 @@ namespace WXService.Entity.Reponse
         /// 图文消息个数，限制为10条以内
         /// </summary>
         [XmlIgnore]
-        public int ArticleCount { get; set; }
+        public int ArticleCount { 
+            get{ return this.Articles.Count;}
+            set { ;}
+        }
 
         [XmlElement("ArticleCount")]
         public XmlNode ArticleCountXmlNode

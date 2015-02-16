@@ -23,11 +23,16 @@ namespace WXSolution
             //tm.FromUserName = "ToUserName";
             //tm.CreateTime = DateTimeHelper.GetNowTime();
             //tm.Content = "欢迎您关注沙坪人口公众微信号，更多功能正在开发中！";
-            string xml = " <xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName> <CreateTime>1348831860</CreateTime>"+
-            "<MsgType><![CDATA[text]]></MsgType><Content><![CDATA[this is a test]]></Content><MsgId>1234567890123456</MsgId></xml>";
-            ReqMsgBase reqMsg = ReqMsgFactory.GetReqMsgEntity(XDocument.Parse(xml));
-            WeiXinService wxs = new WeiXinService();
-            this.label2.Text = wxs.ResponseMsg(reqMsg);
+            //string xml = " <xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName> <CreateTime>1348831860</CreateTime>"+
+            //"<MsgType><![CDATA[text]]></MsgType><Content><![CDATA[this is a test]]></Content><MsgId>1234567890123456</MsgId></xml>";
+            //ReqMsgBase reqMsg = ReqMsgFactory.GetReqMsgEntity(XDocument.Parse(xml));
+            //WeiXinService wxs = new WeiXinService();
+            //this.label2.Text = wxs.ResponseMsg(reqMsg);
+            List<string> weekendDay = new List<string>();
+            weekendDay.Add("Saturday");
+            weekendDay.Add("Sunday");
+            string t = TimeHelper.IsWorkingDay("05:00", "12:30", weekendDay).ToString() ;
+            this.label2.Text = t;
         }
     }
 }

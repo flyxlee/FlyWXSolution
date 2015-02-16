@@ -16,3 +16,12 @@ G:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\WXService.pdb
 G:\MySolution\WXProject\FlyWXSolution\WXSolution\obj\Release\WXSolution.csprojResolveAssemblyReference.cache
 G:\MySolution\WXProject\FlyWXSolution\WXSolution\obj\Release\WXSolution.dll
 G:\MySolution\WXProject\FlyWXSolution\WXSolution\obj\Release\WXSolution.pdb
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\WXSolution.dll.config
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\WXSolution.dll
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\WXSolution.pdb
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\WXService.dll
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\Newtonsoft.Json.dll
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\bin\WXService.pdb
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\obj\Release\WXSolution.csprojResolveAssemblyReference.cache
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\obj\Release\WXSolution.dll
+F:\MySolution\WXProject\FlyWXSolution\WXSolution\obj\Release\WXSolution.pdb

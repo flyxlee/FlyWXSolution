@@ -40,11 +40,6 @@ namespace WXService.Handlers
                 mt.Content = pcMsg.GetDefaultMsg();
                 response = mt.ToXml();
             }
-            else if (content.ToUpper().Equals("LY"))
-            {
-                ReponseMsgCustomerService mcs = new ReponseMsgCustomerService(reqMsg);
-                response = mcs.ToXml();
-            }
             else
             {
                 response = HandleOther(content);
